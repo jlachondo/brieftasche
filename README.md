@@ -7,10 +7,11 @@ A wallet app written in Swift/SwiftUI.
 - Create a firebase project
 - Configure the iOS app
 - Download the `GoogleService-Info.plist` file
+- Clone this repo then open the project in Xcode
 - Drag and drop that file in the root directory of the project
 
 ## Installation
-Clone then open the project in XCode
+Open the project in Xcode
 
 To run:
 ```
