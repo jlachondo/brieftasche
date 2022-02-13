@@ -1,7 +1,7 @@
 # Brieftasche
 
 ## About
-A wallet app written in SwiftUI.
+A wallet app written in Swift/SwiftUI.
 
 ## Setup
 - Create a firebase project
