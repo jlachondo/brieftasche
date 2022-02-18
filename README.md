@@ -15,5 +15,5 @@ Open the project in Xcode
 
 To run:
 ```
-⌘ (Command/Cmd) + r
+⌘ (Command/Cmd) + R
 ```
