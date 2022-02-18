@@ -64,13 +64,29 @@ struct SignUpView: View {
         }
     }
     
+    private func setUserData(document: String, docData: [String: Any]) {
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(document).setData(docData) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+                handleRegistrationProcess(errorMsg: "Something went wrong while creating user data, please try again.", isLoading: false)
+            } else {
+                print("Document successfully written!")
+                withAnimation {
+                    viewRouter.currentPage = .homeScreen
+                }
+            }
+        }
+    }
+    
     private func register() {
         handleRegistrationProcess(errorMsg: "", isLoading: true)
         
-        //        Added async here. The state won't update/the screen won't rerender immediately, without it you'll be stuck in a loading button.
+        // Added async here. The state won't update/the screen won't rerender immediately, without it you'll be stuck in a loading button.
         if firstName.isEmpty {
             handleRegistrationProcess(errorMsg: "First name is required.", isLoading: false)
-            //            Semicolon to stop the execution
+            // Semicolon to stop the execution
             return;
         }
         if lastName.isEmpty {
@@ -87,10 +103,20 @@ struct SignUpView: View {
                 handleRegistrationProcess(errorMsg: AuthUtil().handleFirAuthError(error: error), isLoading: false)
             } else {
                 print(result!, "Result")
-                //                TODO: Add firestore request here to create a record using the result's uid - record should contain user's: fname, lname, email, isActive??, isVerified??, id??
-                withAnimation {
-                    viewRouter.currentPage = .homeScreen
-                }
+                guard let res = result else { return }
+                print(res)
+                let id = res.user.uid
+                let docData: [String: Any] = [
+                    "email": res.user.email!,
+                    "firstName": firstName,
+                    "id": id,
+                    "isActive": true,
+                    "isEmailVerified": res.user.isEmailVerified,
+                    "lastName": lastName,
+                    "timestamp": Timestamp(date: Date()),
+                ]
+                print(docData)
+                setUserData(document: id, docData: docData)
             }
         }
     }
