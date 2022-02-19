@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7213DA8727C0D45E00C48E54 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213DA8627C0D45E00C48E54 /* UserViewModel.swift */; };
+		7213DA8927C0EDE200C48E54 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213DA8827C0EDE200C48E54 /* DateUtil.swift */; };
+		7213DA8B27C1308800C48E54 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213DA8A27C1308800C48E54 /* ExpenseListView.swift */; };
+		7213DA8D27C1330D00C48E54 /* ExpenseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213DA8C27C1330D00C48E54 /* ExpenseUtil.swift */; };
+		7213DA8F27C13AE800C48E54 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213DA8E27C13AE800C48E54 /* AddExpenseView.swift */; };
+		7213DA9127C1469300C48E54 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213DA9027C1469300C48E54 /* Expense.swift */; };
+		7213DA9327C146C300C48E54 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213DA9227C146C300C48E54 /* ExpenseViewModel.swift */; };
 		7226CF1127BFFEA3007777B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7226CF1027BFFEA3007777B3 /* User.swift */; };
 		7226CF1327C0007F007777B3 /* ClassicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7226CF1227C0007F007777B3 /* ClassicListView.swift */; };
 		7226CF1527C00961007777B3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7226CF1427C00961007777B3 /* DashboardView.swift */; };
@@ -36,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7213DA8627C0D45E00C48E54 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		7213DA8827C0EDE200C48E54 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		7213DA8A27C1308800C48E54 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
+		7213DA8C27C1330D00C48E54 /* ExpenseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseUtil.swift; sourceTree = "<group>"; };
+		7213DA8E27C13AE800C48E54 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		7213DA9027C1469300C48E54 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		7213DA9227C146C300C48E54 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
 		7226CF1027BFFEA3007777B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7226CF1227C0007F007777B3 /* ClassicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicListView.swift; sourceTree = "<group>"; };
 		7226CF1427C00961007777B3 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -77,11 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7213DA8527C0D43100C48E54 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7213DA8627C0D45E00C48E54 /* UserViewModel.swift */,
+				7213DA9227C146C300C48E54 /* ExpenseViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		72C5370B27BD441C00B366AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				72C5370C27BD52CC00B366AD /* ProfileLink.swift */,
 				7226CF1027BFFEA3007777B3 /* User.swift */,
+				7213DA9027C1469300C48E54 /* Expense.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +136,7 @@
 				72CDF12827B785A600B4FBEE /* Fonts */,
 				72C5370B27BD441C00B366AD /* Models */,
 				72CDF13127B7A8FD00B4FBEE /* Utils */,
+				7213DA8527C0D43100C48E54 /* ViewModels */,
 				72CDF11127B750E200B4FBEE /* Views */,
 				72CDF10927B54EED00B4FBEE /* GoogleService-Info.plist */,
 				72CDF12727B782D900B4FBEE /* Info.plist */,
@@ -139,6 +164,7 @@
 				72722D7227B7E48F00C0E78D /* HomeView.swift */,
 				72A6A99127BC0715004132C5 /* ProfileView.swift */,
 				7226CF1427C00961007777B3 /* DashboardView.swift */,
+				7213DA8E27C13AE800C48E54 /* AddExpenseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +185,7 @@
 				72CDF12527B779AA00B4FBEE /* ButtonView.swift */,
 				72CDF12F27B79CA200B4FBEE /* ErrorMessageView.swift */,
 				7226CF1227C0007F007777B3 /* ClassicListView.swift */,
+				7213DA8A27C1308800C48E54 /* ExpenseListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				72CDF13227B7A92F00B4FBEE /* AuthUtil.swift */,
+				7213DA8827C0EDE200C48E54 /* DateUtil.swift */,
+				7213DA8C27C1330D00C48E54 /* ExpenseUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -262,19 +291,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7213DA9127C1469300C48E54 /* Expense.swift in Sources */,
 				72CDF0FE27B54EAA00B4FBEE /* SignInView.swift in Sources */,
+				7213DA8927C0EDE200C48E54 /* DateUtil.swift in Sources */,
 				72CDF0FC27B54EAA00B4FBEE /* BrieftascheApp.swift in Sources */,
+				7213DA8F27C13AE800C48E54 /* AddExpenseView.swift in Sources */,
 				72722D7327B7E49000C0E78D /* HomeView.swift in Sources */,
+				7213DA8B27C1308800C48E54 /* ExpenseListView.swift in Sources */,
 				72CDF13027B79CA200B4FBEE /* ErrorMessageView.swift in Sources */,
 				7226CF1127BFFEA3007777B3 /* User.swift in Sources */,
 				72CDF12427B769F200B4FBEE /* TextFieldView.swift in Sources */,
+				7213DA8D27C1330D00C48E54 /* ExpenseUtil.swift in Sources */,
 				72CDF11427B7518600B4FBEE /* SplashView.swift in Sources */,
 				72CDF13327B7A92F00B4FBEE /* AuthUtil.swift in Sources */,
+				7213DA9327C146C300C48E54 /* ExpenseViewModel.swift in Sources */,
 				72CDF11827B7541F00B4FBEE /* AppView.swift in Sources */,
 				72CDF12227B7682600B4FBEE /* LogoView.swift in Sources */,
 				72CDF12E27B7904D00B4FBEE /* SignUpView.swift in Sources */,
 				72CDF11F27B756E600B4FBEE /* UIConfig.swift in Sources */,
 				72CDF11627B7528800B4FBEE /* ViewRouter.swift in Sources */,
+				7213DA8727C0D45E00C48E54 /* UserViewModel.swift in Sources */,
 				7226CF1527C00961007777B3 /* DashboardView.swift in Sources */,
 				72A6A99227BC0716004132C5 /* ProfileView.swift in Sources */,
 				7226CF1327C0007F007777B3 /* ClassicListView.swift in Sources */,

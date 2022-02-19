@@ -17,6 +17,7 @@ class UIConfig {
     static let mediumFont = Font.custom("Itim", size: 28)
     static let largeFont = Font.custom("Itim", size: 36)
     static let xLargeFont = Font.custom("Itim", size: 42)
+    static let xxLargeFont = Font.custom("Itim", size: 48)
     
     // Color
     static let primaryBgColor: UIColor = .white
@@ -24,7 +25,8 @@ class UIConfig {
     static let primaryFontColor = Color(red: 0.03, green: 0.13, blue: 0.15)
     static let secondaryFontColor: Color = .white
     static let tertiaryFontColor = Color(red: 0.21, green: 0.52, blue: 0.55)
-    static let primaryBtnBGColor = Color(red: 0.21, green: 0.52, blue: 0.55)
+    // static let primaryBtnBGColor = Color(red: 0.21, green: 0.52, blue: 0.55)
+    static let primaryBtnBGColor = Color(red: 0, green: 0, blue: 0, opacity: 0.9)
     static let secondaryBtnBGColor = Color(red: 0.94, green: 0.94, blue: 0.94)
     static let secondaryBtnBGMaterial: Material = .thinMaterial
     static let errorMsgBgColor = Color(red: 0.87, green: 0.29, blue: 0.28)
