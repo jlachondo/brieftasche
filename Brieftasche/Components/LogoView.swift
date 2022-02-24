@@ -23,7 +23,7 @@ struct LogoView: View {
             if imageLbl != nil {
                 Text(imageLbl!)
                     .font(font)
-                    .foregroundColor(UIConfig.tertiaryFontColor)
+                    .foregroundColor(UIConfig.primaryFontColor)
             }
         }
     }

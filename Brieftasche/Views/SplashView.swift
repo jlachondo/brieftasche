@@ -9,10 +9,10 @@ import Firebase
 import SwiftUI
 
 struct SplashView: View {
-
+    
     @State var isActive: Bool = false
     @State var isChecking: Bool = false
-        
+    
     var body: some View {
         VStack {
             if isChecking {
@@ -23,7 +23,7 @@ struct SplashView: View {
                 }
             } else {
                 ZStack {
-                    Color(UIConfig.secondaryBgColor)
+                    Color(UIConfig.primaryBgColor)
                         .edgesIgnoringSafeArea(.all)
                     LogoView()
                 }
@@ -31,11 +31,11 @@ struct SplashView: View {
         }
         .onAppear {
             checkUserIfSignedIn()
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-//                withAnimation {
-//                    self.isActive = true
-//                }
-//            }
+            //            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            //                withAnimation {
+            //                    self.isActive = true
+            //                }
+            //            }
         }
     }
     
@@ -46,12 +46,12 @@ struct SplashView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 print("checkUserIfSignedIn - dispatchQueue is called")
                 withAnimation {
-//                    Done displaying the splash screen
+                    //                    Done displaying the splash screen
                     self.isChecking = true
-
+                    
                     if user != nil {
                         print("Active user's email: \(user?.email ?? "None")" )
-//                        An active user is found
+                        //                        An active user is found
                         self.isActive = true
                     }
                 }

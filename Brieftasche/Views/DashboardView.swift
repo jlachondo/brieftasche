@@ -10,7 +10,7 @@ import SwiftUI
 struct DashboardView: View {
     
     @ObservedObject private var expenseVM = ExpenseViewModel()
-
+    
     let calendar = Calendar.current
     
     var body: some View {
@@ -19,19 +19,20 @@ struct DashboardView: View {
                 // Add expense button
                 HStack {
                     Spacer()
+                    // TODO: Disable this if email is not verified. But for now bypass it as the email verification feature is not yet implemented.
                     NavigationLink(destination: AddExpenseView()) {
                         Image(systemName: "plus")
                             .resizable()
                             .padding(6)
                             .frame(width: 36, height: 36)
-                            // .background(Color.black)
+                        // .background(Color.black)
                             .background(UIConfig.primaryBtnBGColor)
                             .clipShape(Circle())
                             .foregroundColor(.white)
                     }
                 }
                 .padding(EdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15))
-
+                
                 // Total expense label
                 HStack(spacing: 20) {
                     VStack(spacing: 0) {
@@ -53,19 +54,19 @@ struct DashboardView: View {
                 .frame(maxWidth: .infinity, maxHeight: 250)
                 .padding()
                 .background(Color(UIConfig.primaryBgColor))
-
+                
                 // Expenses list view
                 listView
-    //            .refreshable {
-    //                await Task.sleep(2_000_000_000)
-    //                print("Something about refreshable")
-    //            }
-    //            .onAppear {
-    //                UIRefreshControl.appearance().tintColor = UIColor.red
-    //                UIRefreshControl.appearance().backgroundColor = .green.withAlphaComponent(0.5)
-    //                UIRefreshControl.appearance().attributedTitle = try? NSAttributedString(markdown: "**Some** cool *title*")
-    //            }
-                .listStyle(InsetListStyle())
+                //            .refreshable {
+                //                await Task.sleep(2_000_000_000)
+                //                print("Something about refreshable")
+                //            }
+                //            .onAppear {
+                //                UIRefreshControl.appearance().tintColor = UIColor.red
+                //                UIRefreshControl.appearance().backgroundColor = .green.withAlphaComponent(0.5)
+                //                UIRefreshControl.appearance().attributedTitle = try? NSAttributedString(markdown: "**Some** cool *title*")
+                //            }
+                    .listStyle(InsetListStyle())
             }
             .onAppear {
                 let year = getCurrYear(calendar: calendar)
@@ -86,7 +87,7 @@ struct DashboardView: View {
             expensesListView
         }
     }
-
+    
     var emptyListView: some View {
         List {
             Section {
@@ -112,19 +113,24 @@ struct DashboardView: View {
         }
         .navigationBarHidden(true)
     }
-
+    
     var expensesListView: some View {
         // List of expenses
-        List(Array(expenseVM.expenses.enumerated()), id: \.element.id) { (index, expense) in
-            Section {
-                ExpenseListView(category: expense.category, note: expense.note, amount: expense.amount, recordedAt: expense.recordedAt)
-            } header: {
+        VStack {
+            HStack {
                 Text("Expenses")
                     .foregroundColor(Color(.systemGray))
                     .font(UIConfig.smallFont)
+                Spacer()
             }
+            .padding(.horizontal, 20)
+            List(Array(expenseVM.expenses.enumerated()), id: \.element.id) { (index, expense) in
+                Section {
+                    ExpenseListView(category: expense.category, note: expense.note, amount: expense.amount, recordedAt: expense.recordedAt)
+                }
+            }
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
     }
 }
 

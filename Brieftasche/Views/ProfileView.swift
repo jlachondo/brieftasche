@@ -14,7 +14,9 @@ struct ProfileView: View {
     
     @ObservedObject var userVM = UserViewModel()
     
+    @State var alertMsg = ""
     @State var hasSignOutError = false
+    @State var isShowingAlert = false
     @State var isSigningOut = false
     
     let profileLinks: [ProfileLink] = [
@@ -67,8 +69,12 @@ struct ProfileView: View {
                 VStack(spacing: 0) {
                     Button {
                         print("Verify email pressed")
+                        alertHandler(alertMsg: "This feature is not yet implemented.", isShowingAlert: true)
                     } label: {
                         ClassicListView(isPressable: !userVM.user.isEmailVerified, text: userVM.user.isEmailVerified ? "Email is verified" : "Verify email")
+                    }
+                    .alert(alertMsg, isPresented: $isShowingAlert) {
+                        Button("OK", role: .cancel) { }
                     }
                     .disabled(userVM.user.isEmailVerified)
                     Divider()
@@ -86,7 +92,9 @@ struct ProfileView: View {
                             Divider()
                         }
                     }
-                    
+                    .alert(alertMsg, isPresented: $isShowingAlert) {
+                        Button("OK", role: .cancel) { }
+                    }
                 }
                 Spacer()
                 
@@ -116,13 +124,21 @@ struct ProfileView: View {
         }
     }
     
+    private func alertHandler(alertMsg: String, isShowingAlert: Bool) {
+        self.alertMsg = alertMsg
+        self.isShowingAlert = isShowingAlert
+    }
+    
     private func handleProfileLinks(action: String) {
         if action == "about" {
             print("About the app pressed")
+            alertHandler(alertMsg: "Brieftasche v1.0.0", isShowingAlert: true)
         } else if action == "contactAndSupport" {
             print("Contact and Support pressed")
+            alertHandler(alertMsg: "This screen is not yet implemented.", isShowingAlert: true)
         } else if action == "changePassword" {
             print("Change Password pressed")
+            alertHandler(alertMsg: "This feature is not yet implemented.", isShowingAlert: true)
         }
     }
     

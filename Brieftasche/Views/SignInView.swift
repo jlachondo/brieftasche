@@ -42,7 +42,7 @@ struct SignInView: View {
                             viewRouter.currentPage = .signUpScreen
                         }) {
                             Text("Register here")
-                                .foregroundColor(UIConfig.tertiaryFontColor)
+                                .foregroundColor(Color(.systemBlue))
                                 .font(UIConfig.smallFont)
                                 .underline()
                         }

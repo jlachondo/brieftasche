@@ -21,30 +21,24 @@ struct HomeView: View {
         TabView(selection: $selectedTab) {
             // Dashboard Tab
             DashboardView()
-            .tabItem {
-                Label("Dashboard", systemImage: "chart.bar.doc.horizontal.fill")
-            }
-            .tag(1)
+                .tabItem {
+                    Label("Dashboard", systemImage: "chart.bar.doc.horizontal.fill")
+                }
+                .tag(1)
             
             // History Tab
-            VStack {
-                Text("History screen")
-                    .padding(.bottom, 15)
-                Button("Move to Third Tab") {
-                    selectedTab = 3
+            HistoryView()
+                .tabItem {
+                    Label("History", systemImage: "chart.pie.fill")
                 }
-            }
-            .tabItem {
-                Label("History", systemImage: "chart.pie.fill")
-            }
-            .tag(2)
-
+                .tag(2)
+            
             // Profile Tab
             ProfileView()
-            .tabItem {
-                Label("Profile", systemImage: "person.crop.circle.fill")
-            }
-            .tag(3)
+                .tabItem {
+                    Label("Profile", systemImage: "person.crop.circle.fill")
+                }
+                .tag(3)
         }
         //        Use `tint` if you're targeting iOS 15 and later, else use `accentColor`
         //        .tint(.red)

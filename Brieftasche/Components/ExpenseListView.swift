@@ -23,7 +23,7 @@ struct ExpenseListView: View {
                     .foregroundColor(UIConfig.primaryFontColor)
                     .font(UIConfig.regularFont)
                     .lineLimit(1)
-                if note != nil {
+                if note != nil && note != "" {
                     Text(note ?? "")
                         .foregroundColor(Color(.systemGray2))
                         .font(UIConfig.xSmallFont)
@@ -47,6 +47,7 @@ struct ExpenseListView: View {
 
 struct ExpenseListView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenseListView().previewLayout(.sizeThatFits)
+        ExpenseListView()
+            .previewLayout(.sizeThatFits)
     }
 }

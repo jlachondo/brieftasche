@@ -47,7 +47,7 @@ struct SignUpView: View {
                         viewRouter.currentPage = .signInScreen
                     }) {
                         Text("Login")
-                            .foregroundColor(UIConfig.tertiaryFontColor)
+                            .foregroundColor(Color(.systemBlue))
                             .font(UIConfig.smallFont)
                             .underline()
                     }
