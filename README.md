@@ -13,7 +13,7 @@ A wallet app written in Swift/SwiftUI.
 <img align="left" src="screenshots/add_expense_screen.png" height="420">
 <img src="screenshots/add_expense_modal.png" height="420">
 <img align="left" src="screenshots/history_screen.png" height="420">
-<img align="left" src="screenshots/profile_screen.png" height="420">
+<img src="screenshots/profile_screen.png" height="420">
 
 ## Todo list
 - [x] Login screen
