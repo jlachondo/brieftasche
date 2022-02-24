@@ -6,6 +6,14 @@ Brieftasche, track your expenses ~
 A wallet app written in Swift/SwiftUI.
 
 ## App Screenshots
+<img align="left" src="screenshots/splash_screen.png" height="420">
+<img align="left" src="screenshots/login_screen.png" height="420">
+<img src="screenshots/register_screen.png" height="420">
+<img align="left" src="screenshots/dashboard_screen.png" height="420">
+<img align="left" src="screenshots/add_expense_screen.png" height="420">
+<img src="screenshots/add_expense_modal.png" height="420">
+<img align="left" src="screenshots/history_screen.png" height="420">
+<img align="left" src="screenshots/profile_screen.png" height="420">
 
 ## Todo list
 - [x] Login screen
