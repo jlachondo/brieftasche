@@ -15,7 +15,7 @@ A wallet app written in Swift/SwiftUI.
 <img align="left" src="screenshots/history_screen.png" height="420">
 <img src="screenshots/profile_screen.png" height="420">
 
-## Todo list
+## Todo List
 - [x] Login screen
 - [x] Register screen
 - [x] Dashboard screen
